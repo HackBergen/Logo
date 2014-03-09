@@ -10,7 +10,7 @@
 fudge = 0.1;
 xheight=15;
 zheight=8;
-res=80;
+res=100;
 
 module poly_path_H(h)
 {
@@ -182,7 +182,7 @@ translate([0, 0, zheight])
 poly_path_B(xheight);
 xtube();
 }
-ytube(-102,40);
+ytube(-99,45);
 }
 
 intersection() {
@@ -192,7 +192,7 @@ translate([0, 0, zheight])
 poly_path_E1(xheight);
 xtube();
 }
-ytube(-63,30);
+ytube(-60,35);
 }
 
 intersection() {
@@ -212,7 +212,7 @@ translate([0, 0, zheight])
 poly_path_G(xheight);
 xtube();
 }
-ytube(16,36);
+ytube(18,40);
 }
 
 intersection() {
@@ -222,7 +222,7 @@ translate([0, 0, zheight])
 poly_path_E2(xheight);
 xtube();
 }
-ytube(55,30);
+ytube(57,35);
 }
 
 intersection() {
