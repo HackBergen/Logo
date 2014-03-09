@@ -111,6 +111,15 @@ rotate([0, 270, 0])
 cylinder(h = 250, r1 = 14, r2 = 14, center = true, $fn=res);
 }
 
+module ytube(x,w)
+{
+color("grey")
+translate([x, -33, 8])
+resize(newsize=[w,0,25])
+rotate([90, 0, 0])
+cylinder(h = 80, r1 = 14, r2 = 14, center = true, $fn=res);
+}
+
 module HKtube()
 {
 color("green")
@@ -120,6 +129,9 @@ rotate([0, 270, 0])
 cylinder(h = 250, r1 = 14, r2 = 14, center = true, $fn=res);
 }
 
+//difference() {
+//{
+module bergen() {
 intersection()
 {
 translate([0, 0, zheight])
@@ -162,6 +174,7 @@ poly_path_K(xheight);
 HKtube();
 }
 
+intersection() {
 translate([-1, 0, 0])
 intersection()
 {
@@ -169,40 +182,67 @@ translate([0, 0, zheight])
 poly_path_B(xheight);
 xtube();
 }
+ytube(-102,40);
+}
 
+intersection() {
 intersection()
 {
 translate([0, 0, zheight])
 poly_path_E1(xheight);
 xtube();
 }
+ytube(-63,30);
+}
 
+intersection() {
 intersection()
 {
 translate([0, 0, zheight])
 poly_path_R(xheight);
 xtube();
 }
+ytube(-20,40);
+}
 
+intersection() {
 intersection()
 {
 translate([0, 0, zheight])
 poly_path_G(xheight);
 xtube();
 }
+ytube(16,36);
+}
 
+intersection() {
 intersection()
 {
 translate([0, 0, zheight])
 poly_path_E2(xheight);
 xtube();
 }
+ytube(55,30);
+}
 
+intersection() {
 intersection()
 {
 translate([0, 0, zheight])
 poly_path_N(xheight);
 xtube();
+}
+ytube(100 ,45);
+}
+}
+
+difference() {
+
+bergen();
+
+translate([-132, -75, 16])
+color("brown")
+cube([270, 70, 20]);
 }
 
 translate([-132, -75, -10])
